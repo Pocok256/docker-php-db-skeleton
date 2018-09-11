@@ -1,0 +1,13 @@
+version: '2'
+services:
+  php:
+    build: ./php
+    volumes:
+      - ./www:/var/www/html/web
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+    - "80:80"
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: root
